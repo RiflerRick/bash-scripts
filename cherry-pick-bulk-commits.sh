@@ -9,11 +9,13 @@ function file_exists() {
 
 function show_help() {
     echo "Usage: cherry-pick-bulk-commits.sh [OPTIONS] <filename>"
-    echo "filename: file having all commits generated using $(tput bold && tput setaf 2)git log -n <number of commits> --oneline --reverse> <filename>$(tput sgr0)"
+    echo "filename: file having all commits generated using $(tput bold && tput setaf 2)git log -n <number of commits> --oneline --reverse > <filename>$(tput sgr0)"
+    echo -e "\t An example of git log could be $(tput bold && tput setaf 2)git log -n 100 --oneline --reverse > master_new_commits $(tput sgr0)"
     echo -e "Options: \n\t --help: display help instructions"
     echo -e "\t --branch: branch on which to apply the commits"
     echo "Examples:"
-    echo -e "\t $(tput bold && tput setaf 2)git log -n 100 --oneline --reverse > master_new_commits $(tput sgr0)"
+    echo -e "\t $(tput bold && tput setaf 2)./cherry-pick-bulk-commits.sh --branch master master_new_commits$(tput sgr0)"
+    echo -e "\t $(tput bold && tput setaf 2)./cherry-pick-bulk-commits.sh master_new_commits$(tput sgr0)"
 }
 
 function cherry-pick(){
